@@ -1,0 +1,40 @@
+---
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: frontend-redirection-rule
+  namespace: rsp-uat
+spec:
+  sslPolicy: gke-ingress-ssl-policy
+  redirectToHttps:
+    enabled: true
+--- 
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: protocol-redirection-rule
+  namespace: rsp-uat
+spec:
+  sslPolicy: gke-ingress-ssl-policy
+  redirectToHttps:
+    enabled: true
+---
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: support-redirection-rule
+  namespace: rsp-uat
+spec:
+  sslPolicy: gke-ingress-ssl-policy
+  redirectToHttps:
+    enabled: true
+---
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: scheduler-redirection-rule
+  namespace: rsp-uat
+spec:
+  sslPolicy: gke-ingress-ssl-policy
+  redirectToHttps:
+    enabled: true

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rsp-uat-frontend
+  name: rsp-uat-frontend-deploy
+  namespace: rsp-uat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rsp-uat-frontend
+  template:
+    metadata:
+      labels:
+        app: rsp-uat-frontend
+    spec:
+      hostNetwork: true
+      containers:
+      - name: rsp-uat-frontend-ctr
+        image: asia-south1-docker.pkg.dev/ondc-protean-rsp-uat/protean-rsp-uat-frontend/protean-rsp-uat-frontend:0.0.1
+        imagePullPolicy: ""
+        ports:
+        - containerPort: 3000
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rsp-uat-frontend-svc
+  namespace: rsp-uat
+spec:
+  ports:    
+  - port: 3000
+    targetPort: 3000
+  selector:
+    app: rsp-uat-frontend-uat
+  type: NodePort
+
+----

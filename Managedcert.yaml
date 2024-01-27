@@ -1,0 +1,19 @@
+---
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: rsp-uat-frontend-cert
+  namespace: rsp-uat
+spec:
+  domains:
+    - uat-rsp.proteantech.in
+---
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+ name: rsp-uat-protocol-cert
+ namespace: rsp-uat
+spec:
+ domains:
+   - venky.com
+
