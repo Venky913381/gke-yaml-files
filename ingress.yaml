@@ -25,3 +25,6 @@ spec:
             name: rsp-uat-schedulers-svc
             port:
               number: 3003
+
+
+
