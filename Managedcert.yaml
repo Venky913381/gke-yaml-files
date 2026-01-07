@@ -6,7 +6,7 @@ metadata:
   namespace: rsp-uat
 spec:
   domains:
-    - uat-rsp.proteantech.in
+    - example.com
 ---
 apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
