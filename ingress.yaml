@@ -8,21 +8,21 @@ metadata:
   namespace: rsp-uat
   annotations:
     kubernetes.io/ingress.class: "gce"
-    networking.gke.io/managed-certificates: rsp-uat-schedulers-cert
+    networking.gke.io/managed-certificates: rsp-uat--cert
     cloud.google.com/neg: '{"ingress": true}'
     ingress.kubernetes.io/enable-cors: "true"
     networking.gke.io/http-to-https-redirect: "true"
     networking.gke.io/v1beta1.FrontendConfig: scheduler-redirection-rule
 spec:
   rules:
-  - host: api-schedulersuat.proteantech.in
+  - host: example.com
     http:
       paths:
       - path: /*
         pathType: ImplementationSpecific
         backend:
           service:
-            name: rsp-uat-schedulers-svc
+            name: rsp-uat-svc
             port:
               number: 3003
 
