@@ -18,7 +18,7 @@ spec:
       hostNetwork: true
       containers:
       - name: rsp-uat-frontend-ctr
-        image: asia-south1-docker.pkg.dev/ondc-protean-rsp-uat/protean-rsp-uat-frontend/protean-rsp-uat-frontend:0.0.1
+        image: nginx
         imagePullPolicy: ""
         ports:
         - containerPort: 3000
